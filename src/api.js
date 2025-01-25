@@ -6,10 +6,9 @@ import {key} from "./key.js";
  * Normally the API call would be made in the backend
  * By: Basil Ali
  */
-const API_TOKEN = key
 
 export const getStockData =  async (ticker) => {
-    const response = await fetch(`https://api.stockdata.org/v1/data/quote?symbols=${ticker}&api_token=${API_TOKEN}`);
+    const response = await fetch(`https://api.stockdata.org/v1/data/quote?symbols=${ticker}&api_token=${key}`);
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}, ${response.statusText}`);
     }
